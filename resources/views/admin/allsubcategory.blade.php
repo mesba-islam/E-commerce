@@ -9,7 +9,7 @@
             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> All Categories</h4>
             <div class="content-wrapper">
                 <div class="card">
-                    <h5 class="card-header">Category Details</h5>
+                    <h5 class="card-header">Sub Category Details</h5>
                     @if (session()->has('message'))
                         <div class="alert alert-success">
                             {{ session()->get('message') }}
@@ -22,18 +22,19 @@
                                     <th>Name</th>
                                     <th>Slug</th>
                                     <th>Products</th>
-                                    <th>Sub Categories</th>
+                                    <th>Categories</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="table-border-bottom-0">
 
-                                    @foreach ($categories as $category)
+                                    @foreach ($subcategories as $sub)
+
                                     <tr>
-                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $category->category_name }}</strong></td>
-                                     <td>{{ $category->slug }}</td>
-                                     <td>{{ $category->product_count }}</td>
-                                     <td>{{ $category->subcategory_count }}</td>
+                                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $sub->subcategory_name }}</strong></td>
+                                     <td>{{ $sub->slug }}</td>
+                                     <td>{{ $sub->product_count }}</td>
+                                     <td>{{ $sub->category->category_name}}</td>
                                      <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -41,9 +42,9 @@
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="{{ route('editcategory', $category->id) }}"><i
+                                                <a class="dropdown-item" href="{{ route('editsubcategory', $sub->id) }}"><i
                                                         class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                <a class="dropdown-item" href="{{ route('deletecategory', $category->id) }}"><i
+                                                <a class="dropdown-item" href="{{ route('deletesubcategory', $sub->id) }}"><i
                                                         class="bx bx-trash me-1"></i> Delete</a>
                                             </div>
                                         </div>
@@ -56,4 +57,6 @@
                 </div>
 
             </div>
-        @endsection
+        </div>
+    </div>
+ @endsection

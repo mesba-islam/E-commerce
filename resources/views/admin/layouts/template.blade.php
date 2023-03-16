@@ -158,10 +158,16 @@
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="pages-account-settings-connections.html" class="menu-link">
+                  <a href="{{ route('addsubcategory') }}" class="menu-link">
                     <div data-i18n="Connections">Add subcategory</div>
                   </a>
                 </li>
+
+                <li class="menu-item">
+                    <a href="{{ route('allsubcategory') }}" class="menu-link">
+                      <div data-i18n="Connections">All subcategory</div>
+                    </a>
+                  </li>
               </ul>
             </li>
             <li class="menu-item">
