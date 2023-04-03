@@ -9,7 +9,8 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function Category(){
-        $categories = category::latest()->get();
+        $categories = Category::with('subcategory')->latest()->get();
+
         return view('admin.category', compact('categories'));
 
     }

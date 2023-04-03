@@ -3,8 +3,10 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +55,20 @@ Route::middleware('auth', 'role:admin')->group(function () {
     Route::post('/admin/update-subcategory','UpdateSubCategory')->name('updatesubcategory');
     Route::get('/admin/delete-subcategory/{id}','DeleteSubCategory')->name('deletesubcategory');
     });
+
+    Route::controller(ProductController::class)->group(function(){
+
+        Route::get('/admin/create-product','CreateProduct')->name('createproduct');
+        Route::post('/admin/store-product','StoreProduct')->name('storeproduct');
+        Route::post('/admin/ajax-subcat','ajaxSubcat')->name('ajax.subcat');
+        Route::get('/admin/all-product','allProduct')->name('allproduct');
+        // Route::get('/admin/test', 'test')->name('test');
+        // Route::get('/admin/edit-category/{id}','EditCategory')->name('editcategory');
+        // Route::post('/admin/update-category','UpdateCategory')->name('updatecategory');
+        // Route::get('/admin/delete-category/{id}','DeleteCategory')->name('deletecategory');
+    });
+
 });
+
 
 require __DIR__.'/auth.php';

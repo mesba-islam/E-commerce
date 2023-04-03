@@ -14,6 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
@@ -51,6 +52,11 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('dashboard/assets/js/config.js')}}"></script>
+
+    {{-- jquery --}}
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
+
+
   </head>
 
   <body>
@@ -177,12 +183,12 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="auth-login-basic.html" class="menu-link" target="_blank">
+                  <a href="{{ route('allproduct') }}" class="menu-link" >
                     <div data-i18n="Basic">All Products</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                  <a href="{{ route('createproduct') }}" class="menu-link">
                     <div data-i18n="Basic">Add Products</div>
                   </a>
                 </li>
