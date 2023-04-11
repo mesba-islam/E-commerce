@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.index');
 });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+// })->middleware(['auth', 'role:admin'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -59,13 +59,14 @@ Route::middleware('auth', 'role:admin')->group(function () {
     Route::controller(ProductController::class)->group(function(){
 
         Route::get('/admin/create-product','CreateProduct')->name('createproduct');
-        Route::post('/admin/store-product','StoreProduct')->name('storeproduct');
+        Route::post('/admin/store-product','storeProduct')->name('storeproduct');
         Route::post('/admin/ajax-subcat','ajaxSubcat')->name('ajax.subcat');
         Route::get('/admin/all-product','allProduct')->name('allproduct');
         // Route::get('/admin/test', 'test')->name('test');
-        // Route::get('/admin/edit-category/{id}','EditCategory')->name('editcategory');
-        // Route::post('/admin/update-category','UpdateCategory')->name('updatecategory');
-        // Route::get('/admin/delete-category/{id}','DeleteCategory')->name('deletecategory');
+        Route::get('/admin/edit-product/{id}','editProduct')->name('edit.product');
+        Route::post('/admin/ajax-subcategory','ajaxSubcategory')->name('ajax.subcategory');
+        Route::post('/admin/update-product/{id}','updateProduct')->name('update.product');
+        Route::get('/admin/delete-product/{id}','deleteProduct')->name('delete.product');
     });
 
 });

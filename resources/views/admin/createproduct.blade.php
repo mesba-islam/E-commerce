@@ -47,7 +47,7 @@
 
                                 <div class="mb-3">
                                     <label for="defaultSelect" class="form-label">SubCategory</label>
-                                    <select id="subcategory" name="subcategory" class="form-select">
+                                    <select id="subcategory" name="subcategory_id" class="form-select">
                                     <option>Choose Subcategory...</option>
                                     </select>
                                 </div>
@@ -99,17 +99,20 @@
                                     <input type="text" class="form-control" id="title" name="quantity"
                                         placeholder="1.." />
                                 </div>
-{{-- 
-                                <div class="form-check form-switch mb-2">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="status">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Publish</label>
-                                </div>
 
-                                <div class="form-check form-switch mb-2">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="featured">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Featured</label>
-                                </div> --}}
 
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" name="status" id="defaultCheck3" checked="">
+                                    <label class="form-check-label" for="defaultCheck3"> Published </label>
+                                  </div>
+
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" name="featured" id="defaultCheck3" checked="">
+                                    <label class="form-check-label" for="defaultCheck3"> Featured </label>
+                                  </div>
+
+                                  <br>
                                 <button type="submit" class="btn btn-primary">Create</button>
                             </form>
                         </div>

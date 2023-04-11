@@ -28,13 +28,13 @@
                                 </tr>
                             </thead>
                             <tbody class="table-border-bottom-0">
-
-                                    {{-- @foreach ($categories as $category) --}}
+                              @foreach ($products as $product)
                                     <tr>
-                                    {{-- <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $category->category_name }}</strong></td>
-                                     <td>{{ $category->slug }}</td>
-                                     <td>{{ $category->product_count }}</td>
-                                     <td>{{ $category->subcategory->count() }}</td> --}}
+                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><img src="{{ asset($product->thumbnail) }}" width="90" height="90"></strong></td>
+                                     <td>{{ $product->product_title }}</td>
+                                     <td>{{ $product->category->category_name }}</td>
+                                     <td>{{ $product->price }}</td>
+                                     <td>{{ $product->quantity }}</td>
                                      <td>
                                         <div class="dropdown">
                                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -42,15 +42,15 @@
                                                 <i class="bx bx-dots-vertical-rounded"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                {{-- <a class="dropdown-item" href="{{ route('editcategory', $category->id) }}"><i
+                                                <a class="dropdown-item" href="{{ route('edit.product', $product->id) }}"><i
                                                         class="bx bx-edit-alt me-1"></i> Edit</a>
-                                                <a class="dropdown-item" href="{{ route('deletecategory', $category->id) }}"><i
-                                                        class="bx bx-trash me-1"></i> Delete</a> --}}
+                                                <a class="dropdown-item" href="{{ route('delete.product', $product->id) }}"><i
+                                                        class="bx bx-trash me-1"></i> Delete</a>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
