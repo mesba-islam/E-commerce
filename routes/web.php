@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\CouponController;
+use App\Http\Controllers\Admin\NewslaterController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -76,6 +78,10 @@ Route::middleware('auth', 'role:admin')->group(function () {
      Route::get('/admin/edit-coupon/{id}', [CouponController::class, 'editCoupon'])->name('edit.coupon');
      Route::post('/admin/update-coupon/{id}', [CouponController::class, 'updateCoupon'])->name('update.coupon');
      Route::get('/admin/delete-coupon/{id}', [CouponController::class, 'deleteCoupon'])->name('delete.coupon');
+
+    //Newslaters
+    Route::get('/admin/newslater', [NewslaterController::class, 'Newslater'])->name('newslater');
+    Route::post('/store/newslater', [NewslaterController::class, 'storeNewslater'])->name('store.newslater');
 });
 
 

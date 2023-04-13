@@ -23,7 +23,7 @@ class CouponController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
-        return redirect()->route('admin.allcoupon')->with('message','category Update Successfully');
+        return redirect()->route('all.coupon')->with('message','category Update Successfully');
     }
 
     public function allCoupon(){
