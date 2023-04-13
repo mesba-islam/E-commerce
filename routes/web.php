@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\CouponController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -69,6 +70,12 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/delete-product/{id}','deleteProduct')->name('delete.product');
     });
 
+     Route::get('/admin/add-coupon', [CouponController::class, 'addCoupon'])->name('add.coupon');
+     Route::post('/admin/store-coupon', [CouponController::class, 'storeCoupon'])->name('store.coupon');
+     Route::get('/admin/all-coupon', [CouponController::class, 'allCoupon'])->name('all.coupon');
+     Route::get('/admin/edit-coupon/{id}', [CouponController::class, 'editCoupon'])->name('edit.coupon');
+     Route::post('/admin/update-coupon/{id}', [CouponController::class, 'updateCoupon'])->name('update.coupon');
+     Route::get('/admin/delete-coupon/{id}', [CouponController::class, 'deleteCoupon'])->name('delete.coupon');
 });
 
 

@@ -163,17 +163,20 @@
                     <div data-i18n="Notifications">Add Category</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="{{ route('addsubcategory') }}" class="menu-link">
-                    <div data-i18n="Connections">Add subcategory</div>
-                  </a>
-                </li>
 
                 <li class="menu-item">
                     <a href="{{ route('allsubcategory') }}" class="menu-link">
                       <div data-i18n="Connections">All subcategory</div>
                     </a>
                   </li>
+
+                <li class="menu-item">
+                  <a href="{{ route('addsubcategory') }}" class="menu-link">
+                    <div data-i18n="Connections">Add subcategory</div>
+                  </a>
+                </li>
+
+
               </ul>
             </li>
             <li class="menu-item">
@@ -194,6 +197,27 @@
                 </li>
               </ul>
             </li>
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                  <div data-i18n="Misc">Coupons</div>
+                </a>
+                <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('all.coupon')}}" class="menu-link">
+                        <div data-i18n="Under Maintenance">All Coupons</div>
+                    </a>
+                    </li>
+                  <li class="menu-item">
+                    <a href="{{ route('add.coupon')}}" class="menu-link">
+                      <div data-i18n="Error">Add Coupon</div>
+                    </a>
+                  </li>
+
+                </ul>
+              </li>
+
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
